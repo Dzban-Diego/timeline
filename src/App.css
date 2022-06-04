@@ -1,38 +1,117 @@
+:root{
+  --background-color: #f1f1f1;
+  --timeline-lenght: 18000px;
+  --timeline-color: #3c3c3c;
+}
+
 .App {
   text-align: center;
+  background-color: var(--background-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h4{
+  font-size: 2vh
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  font-size: 3vh
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+p {
+  font-size: 1.8vh
+}
+
+
+
+
+
+
+
+.horizontal-view{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.labels{
+  height: 84vh;
+  width: var(--timeline-lenght);
+  position: relative;
+  overflow:hidden;
+}
+
+.timeline{
+  width: var(--timeline-lenght);
+  height: clamp(30px,4vh,4vh);
+  background-color: var(--timeline-color);
+  margin-bottom: 4vh;
+  box-shadow: 0 0 2.5em 0.5em rgb(204 204 204 / 50%);
+}
+
+.yearIndicator{
+  position: absolute;
+  left: 0;
+  bottom: 4vh;
+  background-color: white;
+}
+
+.deqGRn, .fWAQjO {
+  width: 30%!important;
+}
+
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 0
+}
+
+.multi-select {
+  width: 100%;
+}
+
+select{
+  background-color: transparent;
+  color: black;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 3vh;
+  row-gap: 1vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .eventDescription{
+    margin: 0;
+    padding: .5rem;
+    max-width: 20vw;
+    overflow: hidden;
   }
-  to {
-    transform: rotate(360deg);
+
+  .eventForm{
+    width: 100vw;
+    overflow: scroll;
+    top: 0;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: '1vh',
+  }
+
+  textarea{
+    height: 10vh
   }
 }
